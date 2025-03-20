@@ -1,8 +1,8 @@
 package restaurant;
 
+import main.*;
 import people.*;
 
-import java.text.NumberFormat;
 import java.util.*;
 
 public class Restaurant {
@@ -61,7 +61,7 @@ public class Restaurant {
         for (Menu menu : menus) {
             System.out.println(menu.getName() + "'s Foods:");
             for (Food food : menu.getFoods()) {
-                System.out.println("- Name: " + food.getName() + ", Price: " + formatRupiah(food.getPrice()));
+                System.out.println("- Name: " + food.getName() + ", Price: " + Main.formatRupiah(food.getPrice()));
             }
 
             System.out.println();
@@ -98,12 +98,6 @@ public class Restaurant {
     }
 
     public void showTotalIncome() {
-        System.out.println(name + " got revenue " + formatRupiah(total_income));
-    }
-
-    public String formatRupiah(double price) {
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRp = NumberFormat.getCurrencyInstance(localeID);
-        return formatRp.format(price);
+        System.out.println(name + " got revenue " + Main.formatRupiah(total_income));
     }
 }

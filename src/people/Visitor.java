@@ -1,7 +1,6 @@
 package people;
 
-import java.text.NumberFormat;
-import java.util.Locale;
+import main.*;
 
 public class Visitor {
 
@@ -29,17 +28,11 @@ public class Visitor {
     }
 
     public void addTotal_Price(double price) {
-        total_price += price;
+        total_price = (int) (total_price + price);
     }
 
     public void showTotalPrice() {
-        System.out.println(name + " paid for " + formatRupiah(total_price));
+        System.out.println(name + " paid for " + Main.formatRupiah(total_price));
         System.out.println();
-    }
-
-    public String formatRupiah(double price) {
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRp = NumberFormat.getCurrencyInstance(localeID);
-        return formatRp.format(price);
     }
 }

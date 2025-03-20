@@ -2,7 +2,6 @@ package people;
 
 import main.*;
 
-import java.text.NumberFormat;
 import java.util.*;
 
 public class Chef {
@@ -31,7 +30,7 @@ public class Chef {
     }
 
     public void addCooking_history(int qty, String food_name, Visitor visitor, double price) {
-        cooking_history.add("(" + qty + ") " + food_name + " was cooked for " + visitor.getName() + ", price: " + formatRupiah(price));
+        cooking_history.add("(" + qty + ") " + food_name + " was cooked for " + visitor.getName() + ", total price: " + Main.formatRupiah(price));
     }
 
     public void showCookHistory() {
@@ -41,11 +40,5 @@ public class Chef {
         }
 
         System.out.println();
-    }
-
-    public String formatRupiah(double price) {
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRp = NumberFormat.getCurrencyInstance(localeID);
-        return formatRp.format(price);
     }
 }

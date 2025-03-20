@@ -1,7 +1,10 @@
 package main;
 
-import restaurant.*;
 import people.*;
+import restaurant.*;
+
+import java.text.*;
+import java.util.*;
 
 public class Main {
 
@@ -50,5 +53,10 @@ public class Main {
         chef2.showCookHistory();
 
         restaurant.showTotalIncome();
+    }
+
+    public static String formatRupiah(double price) {
+        NumberFormat formatRp = NumberFormat.getCurrencyInstance(new Locale("in", "ID"));
+        return formatRp.format(price);
     }
 }
